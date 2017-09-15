@@ -1,0 +1,82 @@
+<div ng-controller="Customer_Controller" xmlns:filter="http://www.w3.org/1999/xhtml">
+<h1>Hello {{username}},</h1>
+<br>
+<h3>We have some new and exciting coupons for you,<br>
+Have fun!
+</h3>
+
+<br>
+	<button class="btn btn-primary" ng-click="showPanel()">Apply Filters</button>
+	<br>
+	<div ng-show="searchPanel" class = "element animate-show">	
+	<table>
+	<tr>
+	<td>
+		Search: <input type="text" ng-model="searchText" >
+	</td>
+	<td>
+		Filter By:
+	<select ng-model="filter" ng-init="filter='price'">
+		<option value="price" selected="selected" >Max Price</option>
+		<option value="type">Type</option>			
+	</select>	
+	</td>
+	</tr>
+	<tr>
+	<td> </td>
+	<td style="float:right;">
+	<div ng-show="filter=='price'">
+	Max Price:
+	<input type="number" step="0" ng-model="priceFilter">
+	</div>
+
+
+
+	<div ng-show="filter=='type'">
+	Type:	
+	<select ng-model="typeFilter" ng-init="typeFilter='SPORTS'" >
+
+		<option>SPORTS</option>
+		<option>FOOD</option>
+		<option>ELECTRICITY</option>
+		<option>HEALTH</option>
+		<option>RESTURANTS</option>
+		<option>CAMPING</option>
+		<option>TRAVELLING</option>
+	</select>
+	</div>
+	<button class="btn btn-primary" ng-click="filterPanel()">Filter</button>
+	<button class="btn btn-primary" ng-click="clearFilter()">Show All</button>
+	</td>
+	</tr>
+	</table>
+	</div>
+	
+	<!-- Start Main Coupons -->
+	<div>
+		
+		<div class="gallery">	
+			<div class="item" dir-paginate="coupon in allCoupons | filter:searchText |  itemsPerPage:4" name="paginate" >
+			<h3>{{coupon.title}}</h3>
+			<!-- <input type="image" ng-src="{{coupon.image}}" style="max-width: 202px;" ><br>  -->
+			<a ng-click="view(coupon)"><img src="{{coupon.image}}" style="max-width: 202px;"></a>					
+			</div>	
+		</div>
+		<div ng-show="!allCoupons.length">
+		<h2>There are no coupons answers to that request.</h2>
+		</div>
+	</div>
+	<!-- End Main Coupons -->	
+	
+	<br style="clear: both;">
+	<div id="paging">
+	<div class="pagination">			 
+		    <dir-pagination-controls max-size="3" 
+		    direction-links="true"  
+		    boundary-links="true"
+		    auto-hide="false" 
+		    template-url="PARTIALS/pagination.html" >
+			</dir-pagination-controls>
+	</div>
+	</div>
+</div>

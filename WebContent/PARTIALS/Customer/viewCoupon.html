@@ -1,0 +1,35 @@
+<div ng-controller="Customer_Controller">
+<div>
+<br>
+<h1>{{selectedCoupon.title}}</h1>
+<br>
+<img src="{{selectedCoupon.image}}" style="max-width: 350px;max-height: 350px;">
+<p><h2>
+{{selectedCoupon.message}}
+</p>
+</h2>
+<br>
+<p><h2 style="color: #4D6699 ;">
+Now!! 
+For Only {{selectedCoupon.price}} Nis.
+</p>
+</h2>
+
+
+
+
+
+    <br>
+    <br>
+    <div>
+        <img src="http://www.freeiconspng.com/uploads/phone-call-icon-16.png" alt="Smiley face" height="42" width="42"> <h2 style="color: green; font-weight:bold;"> Call us:
+    </h2>
+        <h2 style="color: red;">  09-9999999</h2>
+    </div>
+<br>
+<br>
+<p><b>Availble coupons: {{selectedCoupon.amount}}</b></p>
+<p><b><i>The coupon is valid until: {{selectedCoupon.endDate | date:"MMM d,yyyy"}}</b></i></p>
+<p><button class="btn btn-primary" style="float: right;" ng-click="buyCoupon(selectedCoupon)">Purchase Coupon</button></p>
+<div class="feedback"> {{result}} </div>
+</div>

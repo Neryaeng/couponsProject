@@ -1,0 +1,61 @@
+
+<!-- Login Div -->
+
+
+
+<!-- Start Formoid form-->
+<div id="login" ng-controller="login">
+	
+
+
+<!-- Start Formoid form-->
+
+<form class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:350px;min-width:150px;min-height:300px;" method="post"> <!-- max-width:480px -->
+<div class="title"><h2>Your Coupon Site</h2></div>
+<span style="color: red;font-style: italic;">{{loginRes}}</span>
+	<div class="element-input" style="height:40px;">
+		<label class="title">
+			<span class="required">*</span>
+		</label>
+		<div class="item-cont">
+			<input style="height:40px;" class="large" type="text" name="input" required="required" placeholder="User Name" ng-model="userName" autocomplete="off"/>
+			<span class="icon-place"></span>
+		</div>
+	</div>
+	<div style="clear:both;margin-top:25px;"></div>
+	<div class="element-input" style="height:40px;" >
+		<label class="title">
+			<span class="required">*</span>
+		</label>
+		<div class="item-cont">
+			<input style="height:40px;" class="large" type="password" name="input1" required="required" placeholder="Password" ng-model="password"  autocomplete="off"/>
+			<span class="icon-place"></span>
+		</div>
+	</div>
+	<div style="clear:both;margin-top:25px;"></div>
+		<div class="element-select" style="min-height:40px;">
+			<label class="title">
+			<span class="required">*</span>
+			</label>
+			<div class="item-cont">
+				<div class="large">
+						<select style="height:60px;line-hight:40px;" name="select" required="required" ng-model="type">
+							<option value="customer">Customer</option>
+							<option value="company">Company</option>
+							<option value="admin">Administrator</option>
+						</select>
+						<span class="icon-place"></span>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both;margin-top:30px;"></div>
+<div class="submit">	
+	<input  type="submit" value="Login" ng-keyup="$event.keyCode == 13 ? login() : null" ng-click="login()">
+
+</form>
+<!-- Stop Formoid form-->
+
+</div>
+
+
+

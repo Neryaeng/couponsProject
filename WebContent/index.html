@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Coupon System</title>
+
+<meta name="keywords" content=""/> 
+<meta name="description" content=""/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+	<link rel="icon"
+		  type="image/png"
+		  href="https://d30y9cdsu7xlg0.cloudfront.net/png/357441-200.png">
+<link href="STYLE/normalize.css"  rel="stylesheet" 	type="text/css" 	media="all" />
+
+
+<link href="STYLE/style.css"  rel="stylesheet" 	type="text/css" 	media="all" />
+
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-animate.min.js" ></script> -->
+<!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.min.js" ></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js" ></script>
+<script src="https://rawgit.com/ghostbar/angular-file-model/master/angular-file-model.js"></script>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-animate.min.js" ></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!--script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script-->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="SCRIPTS/dirPagination.js"></script>
+<script src="SCRIPTS/ui-bootstrap-tpls-0.13.4.min.js"></script>
+<script type="text/javascript" src="SCRIPTS/formoid-solid-blue.js"></script>
+
+
+<script src="SCRIPTS/controllers.js"></script>
+	
+
+
+
+</head>
+
+<body ng-app="couponApp">
+
+
+	<div id="content">
+		<div id="header">
+			<h1><a href="/"></a></h1>
+			<h2><a href="/"></a></h2>
+			<!--former content: 1) Best Coupon Site 2) CoupoNerya -->
+		</div>
+		<!-- navBars -->
+		<div ng-controller="navBars_Controller">
+			<input type="hidden" ng-model="username"></input>
+			<div class="blue" ng-show="companyNavBar" > <!-- Company -->
+			<ul>
+			<li><a href="#/Company">Our Coupons</a></li> 
+			<li><a href="#/createCoupon">Create Coupon</a></li>
+			<!--li><a href="#/CompanyLogs">Logs</a></li-->
+			<li class="logout" style="float: right;"><a href="" ng-click="logOff()">Sign Out <span style="color: yellow;font-style: italic;">{{username}}</span> </a></li>
+			</ul>
+		</div>
+		
+		
+		<div class="blue" ng-show="adminNavBar"> <!-- Admin -->
+			<ul>
+			<li><a href="#/admin_cust">Customers</a></li> 
+			<li><a href="#/admin_company">Companies</a></li>
+			<!--li><a href="#/adminPage/AllLogs">All Logs</a></li-->
+			<li class="logout" style="float: right;"><a href="" ng-click="logOff()">Sign Out <span style="color: yellow;font-style: italic;">{{username}}</span></a></li>
+		</ul>
+		</div>
+		
+		<div class="blue" ng-show="customerNavBar"> <!-- customer -->
+			<ul>
+			<li><a href="#/Customer">Coupons</a></li> 
+			<li><a href="#/CustomerPurchase">My Coupons</a></li>
+			<li class="logout" style="float: right;"><a href="" ng-click="logOff()">Sign Out <span style="color: yellow;font-style: italic;">{{username}}</span></a></li> <!-- <a >Sign out</a> -->
+		</ul>
+		</div>
+		</div>
+		<div id="full">		
+			
+		<div ng-view> <!-- class="view-animate" -->		
+			<div class="content" >
+					<!-- Main Content -->
+			</div>
+		</div>
+		
+		
+		<div style="clear: both;"></div>
+	</div>
+	
+	</div>
+
+	<div id="footer"><a href="mailto:neryaeng5890@gmail.com">Nerya Engelstein</a> <label> | The design from free CSS styles </label>
+
+	</div>
+	
+</body>
+
+</html>
+
